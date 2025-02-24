@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Bee - Learn Java & VB.NET</title>
+  <link rel="stylesheet" href="lib/java.css">
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('minimized');
+    }
+
+    function showSection(sectionId) {
+      // Hide all sections
+      document.getElementById('about-section').style.display = 'none';
+      document.getElementById('java-editor-container').style.display = 'none';
+
+      // Show the selected section
+      document.getElementById(sectionId).style.display = 'block';
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Show the About section when the page loads
+    window.onload = function() {
+      showSection('about-section');
+    };
+
+    function logout() {
+      alert("Logging out...");
+    }
+  </script>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    
+    <div class="menu-item" onclick="showSection('java-editor-container')" title="Java Editor">
+      <i class="icon">☕</i><span class="text">Java Editor</span>
+    </div>
+    
+    <div class="menu-item" onclick="location.href='https://www.w3schools.com/java/java_intro.asp'" title="Lessons">
+      <i class="icon">📚</i><span class="text">Lessons</span>
+    </div>
+    
+    <div class="menu-item" onclick="showSection('about-section')" title="About">
+      <i class="icon">ℹ️</i><span class="text">About</span>
+    </div>
+    
+    <div class="menu-item" onclick="location.href='DOTNET.html'" title="VB.NET">
+      <i class="icon">💻</i><span class="text">VB.NET</span>
+    </div>
+    
+    <div class="menu-item" title="Home" onclick="location.href='index.html'">
+      <i class="icon">🏠</i><span class="text">Home</span>
+    </div>
+  </div>
+
+  <div class="main-content" id="main-content">
+
+    <!-- About Section -->
+    <div class="about-container">
+      <!-- Card 1 -->
+      <div class="about-card">
+        <h1>Welcome to Code Bee!</h1>
+        <p>
+          Code Bee is designed to help students and users gain in-depth knowledge of programming, 
+          focusing on Java and VB.NET. This platform provides interactive lessons, coding challenges, 
+          and a practical environment to improve problem-solving skills and confidence.
+        </p>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="about-card">
+        <h1>Why Learn with Code Bee?</h1>
+        <p>
+          Code Bee enhances your coding skills by providing a structured and hands-on learning experience. 
+          Whether you're a beginner or looking to refine your skills, our lessons ensure you grasp key 
+          programming concepts in a fun and interactive way.
+        </p>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="about-card">
+        <h1>Why Learn Java?</h1>
+        <p>
+          Java is one of the most popular programming languages in the world. Here’s why you should learn it:
+        </p>
+        <ul>
+          <li><b>Versatility</b> – Used in web apps, mobile apps (Android), desktop applications, and enterprise systems.</li>
+          <li><b>Platform Independence</b> – Java runs on any system with a Java Virtual Machine (JVM).</li>
+          <li><b>High Demand</b> – Java developers are sought-after in tech, finance, and many other industries.</li>
+          <li><b>Community Support</b> – Millions of developers worldwide share resources, tutorials, and tools.</li>
+        </ul>
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="about-card">
+        <h1>Get Started</h1>
+        <p>
+          Begin your coding journey with Code Bee and unlock endless opportunities in software development!
+          Dive into our comprehensive lessons, tackle coding challenges, and watch your programming expertise soar.
+        </p>
+      </div>
+    </div>
+  
+    
+
+    <!-- Java Editor Container -->
+    <div id="java-editor-container" style="display: none;">
+      <div data-pym-src="https://www.jdoodle.com/embed

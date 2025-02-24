@@ -1,0 +1,232 @@
+/* Variables */
+:root {
+    --primary-cyan: #00bfae;
+    --primary-orange: #ff6f61;
+    --background-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --text-color: white;
+    --glass-bg: rgba(30, 30, 47, 0.7);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Variables */
+:root {
+    --primary-cyan: #00bfae;
+    --primary-orange: #ff6f61;
+    --background-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --text-color: white;
+    --glass-bg: rgba(30, 30, 47, 0.7);
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body & Container */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Card Styling */
+  .about-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Headings */
+  .about-card h1 {
+    font-size: 50px;
+    color: #f1c40f;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraphs */
+  .about-card p {
+    font-size: 24px;
+    color: #ecf0f1;
+    line-height: 1.6;
+  }
+  
+  /* List */
+  .about-card ul {
+    font-size: 24px;
+    color: #ecf0f1;
+    list-style: none;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  .about-card li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .about-card h1 {
+      font-size: 36px;
+    }
+    .about-card p,
+    .about-card ul {
+      font-size: 18px;
+    }
+  }
+  
+  
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background: var(--glass-bg);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.minimized {
+    transform: translateX(-190px);
+}
+
+.sidebar .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar.minimized .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.sidebar.minimized .toggle-btn {
+    align-self: flex-end;
+}
+/* Menu Items */
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-cyan));
+    color: white;
+    transform: translateY(-3px);
+}
+
+.menu-item .icon {
+    font-size: 22px;
+    margin-right: 10px;
+    color: var(--primary-cyan);
+}
+
+.menu-item .text {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* Content Area */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.minimized + .content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+/* Hide text when minimized, keep icons visible */
+.sidebar.minimized .text {
+    display: none;
+}
+
+/* Center icons when minimized */
+.sidebar.minimized .menu-item {
+    justify-content: right;
+}
+
+/* Remove margin to keep icons centered */
+.sidebar.minimized .icon {
+    margin-right: 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-orange));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-cyan));
+}
